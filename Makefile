@@ -20,5 +20,8 @@ $(TARGET): $(OBJS)
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+install: $(TARGET)
+	install -m755 $< $(PS3DEV)/bin
+
 clean:
 	rm -rf $(OBJS) $(TARGET)
